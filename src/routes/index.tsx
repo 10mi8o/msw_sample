@@ -1,13 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
+import HomePage from "../pages/Home/Page";
+import LoginPage from "../pages/Login/Page";
+import { SandBox } from "../pages/Sandbox";
+import TestSamplePage from "../pages/TestSample/Page";
 
 export const MswRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/test_sample" element={<TestSamplePage />} />
+      <Route path="/sandbox" element={<SandBox />} />
     </Routes>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+const LoginPage = () => {
   const navigate = useNavigate();
   const HOME_PAGE = "/HOME";
 
@@ -14,4 +14,4 @@ export const Login = () => {
   return <button onClick={login}>login</button>;
 };
 
-export default Login;
+export default LoginPage;

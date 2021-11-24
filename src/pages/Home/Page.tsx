@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import { UserCard } from "../../common/components/UserCard";
 import { User } from "../../common/types/User";
 
-export const Home: React.FC = () => {
-  const [user, setUser] = useState<User>({ username: "", age: null, role: "" });
+const HomePage: React.FC = () => {
+  const [user, setUser] = useState<User>({
+    id: 0,
+    username: "",
+    age: null,
+    role: "",
+  });
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -29,4 +34,4 @@ export const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;
