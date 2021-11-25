@@ -8,6 +8,29 @@ type GetUserResponse = {
   email: string;
 };
 
+export async function getMockUsers(): Promise<JsonPlaceholderUser[]> {
+  const response = await axios.get<GetUserResponse[]>(
+    "http://localhost:3000/users"
+  );
+
+  return response.data;
+}
+
+export async function getMockUser(
+  userId: string
+): Promise<JsonPlaceholderUser> {
+  const response = await axios.get<GetUserResponse>(
+    `http://localhost:3000/user/${userId}`
+  );
+
+  return {
+    id: response.data.id,
+    name: response.data.name,
+    username: response.data.username,
+    email: response.data.email,
+  };
+}
+
 export async function getUser(): Promise<JsonPlaceholderUser> {
   const response = await axios.get<GetUserResponse>(
     "https://jsonplaceholder.typicode.com/users/1"

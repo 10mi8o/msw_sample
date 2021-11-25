@@ -1,7 +1,12 @@
 import { rest } from "msw";
 import { User } from "../common/types/User";
+import { getUser, getUsers } from "./mockApi/User/index";
 
 export const handlers = [
+  rest.get("/users", getUsers),
+
+  rest.get("/user/:userId", getUser),
+
   rest.post("/login", (req, res, ctx) => {
     sessionStorage.setItem("is-authenticated", "true");
 
