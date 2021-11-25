@@ -2,8 +2,6 @@ import axios from "axios";
 import { JsonPlaceholderUser } from "../../common/types/User";
 import { endpoint } from "../../settings/endpoint";
 
-console.log("endpoint", endpoint);
-
 type GetUserResponse = {
   id: number;
   name: string;

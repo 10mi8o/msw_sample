@@ -1,18 +1,23 @@
 import { rest } from "msw";
 import { User } from "../common/types/User";
-import { getUser, getUsers } from "./mockApi/User/index";
+import { login } from "./mockApi/login";
+import { getUser, getUsers } from "./mockApi/user/index";
 
 export const handlers = [
-  rest.get("/users", getUsers),
+  /**
+   * Login
+   */
+  rest.post("/login", login),
 
+  /**
+   * User
+   */
+  rest.get("/users", getUsers),
   rest.get("/user/:userId", getUser),
 
-  rest.post("/login", (req, res, ctx) => {
-    sessionStorage.setItem("is-authenticated", "true");
-
-    return res(ctx.status(200));
-  }),
-
+  /**
+   * Tutorial
+   */
   rest.get("/user", (req, res, ctx) => {
     const isAuthenticated = sessionStorage.getItem("is-authenticated");
 

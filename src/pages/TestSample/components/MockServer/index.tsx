@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getUser } from "../../../../api/User";
+import { getUser } from "../../../../api/user";
 
 export const MockServer = () => {
   const [clicked, setClicked] = useState(false);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMockUser } from "../../../api/User";
+import { getMockUser } from "../../../api/user";
 import { JsonPlaceholderUser } from "../../../common/types/User";
 
 export const MockUser: React.FC = () => {

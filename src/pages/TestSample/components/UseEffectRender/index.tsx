@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getUser } from "../../../../api/User";
+import { getUser } from "../../../../api/user";
 import { JsonPlaceholderUser } from "../../../../common/types/User";
 
 export const UseEffectRender = () => {

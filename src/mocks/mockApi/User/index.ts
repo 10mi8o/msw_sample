@@ -8,9 +8,9 @@ import { JsonPlaceholderUser } from "../../../common/types/User";
 import { mockUsers } from "./mockData";
 
 export const getUsers: ResponseResolver<
-  RestRequest<DefaultRequestBody, any>,
+  RestRequest<DefaultRequestBody>,
   RestContext
-> = (req, res, ctx) => {
+> = (_, res, ctx) => {
   return res(ctx.json(mockUsers));
 };
 
