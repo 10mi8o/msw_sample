@@ -1,5 +1,8 @@
 import axios from "axios";
 import { JsonPlaceholderUser } from "../../common/types/User";
+import { endpoint } from "../../settings/endpoint";
+
+console.log("endpoint", endpoint);
 
 type GetUserResponse = {
   id: number;
@@ -9,9 +12,7 @@ type GetUserResponse = {
 };
 
 export async function getMockUsers(): Promise<JsonPlaceholderUser[]> {
-  const response = await axios.get<GetUserResponse[]>(
-    "http://localhost:3000/users"
-  );
+  const response = await axios.get<GetUserResponse[]>(`${endpoint}/users`);
 
   return response.data;
 }
@@ -20,7 +21,7 @@ export async function getMockUser(
   userId: string
 ): Promise<JsonPlaceholderUser> {
   const response = await axios.get<GetUserResponse>(
-    `http://localhost:3000/user/${userId}`
+    `${endpoint}/user/${userId}`
   );
 
   return {
