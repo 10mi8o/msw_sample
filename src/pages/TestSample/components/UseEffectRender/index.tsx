@@ -13,8 +13,6 @@ export const UseEffectRender = () => {
     fetch();
   }, []);
 
-  console.log("user", user);
-
   return (
     <div>
       <h2>UseEffectRenderTestSample</h2>
