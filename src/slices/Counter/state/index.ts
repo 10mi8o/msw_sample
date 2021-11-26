@@ -6,6 +6,6 @@ export type CounterState = {
 
 export const initialState: CounterState = {
   mode: 0,
-  value: 100,
+  value: 0,
   username: "",
 };

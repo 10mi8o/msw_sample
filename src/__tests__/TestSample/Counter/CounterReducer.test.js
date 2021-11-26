@@ -56,7 +56,7 @@ describe("Reducer of RTK", () => {
       };
       const action = {
         type: incrementByAmount,
-        payload: { counter: { value: 5 } },
+        payload: { value: 5 },
       };
       const state = counterReducer(initialState, action);
       expect(state.value).toEqual(6);
@@ -68,7 +68,7 @@ describe("Reducer of RTK", () => {
       };
       const action = {
         type: incrementByAmount,
-        payload: { counter: { value: 5 } },
+        payload: { value: 5 },
       };
       const state = counterReducer(initialState, action);
       expect(state.value).toEqual(501);
@@ -80,7 +80,7 @@ describe("Reducer of RTK", () => {
       };
       const action = {
         type: incrementByAmount,
-        payload: { counter: { value: 5 } },
+        payload: { value: 5 },
       };
       const state = counterReducer(initialState, action);
       expect(state.value).toEqual(5001);

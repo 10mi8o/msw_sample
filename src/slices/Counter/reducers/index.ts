@@ -1,6 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { WritableDraft } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
-import { fetchDummy, fetchJson } from "../slice";
 import { CounterState } from "../state";
 
 export const counterReducers = {
@@ -24,9 +23,9 @@ export const counterReducers = {
   },
   incrementByAmount: (
     state: WritableDraft<CounterState>,
-    action: PayloadAction<{ counter: CounterState }>
+    action: PayloadAction<{ value: number }>
   ): void => {
-    const { value } = action.payload.counter;
+    const { value } = action.payload;
     switch (state.mode) {
       case 0:
         state.value += value;
@@ -40,17 +39,5 @@ export const counterReducers = {
       default:
         break;
     }
-  },
-
-  extraReducers: (builder: any): void => {
-    builder.addCase(fetchDummy.fulfilled, (state: any, action: any) => {
-      state.value = 100 + Number(action.payload);
-    });
-    builder.addCase(fetchDummy.fulfilled, (state: any, action: any) => {
-      state.value = 100 - Number(action.payload);
-    });
-    builder.addCase(fetchJson.fulfilled, (state: any, action: any) => {
-      state.username = action.payload;
-    });
   },
 };

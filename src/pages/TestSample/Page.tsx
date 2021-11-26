@@ -1,9 +1,11 @@
 import React from "react";
+import { Counter } from "./components/Counter";
 import { FrameworkList } from "./components/FrameworkList";
 import { dummyData } from "./components/FrameworkList/dummyData";
 import { MockServer } from "./components/MockServer";
 import { RenderTest } from "./components/Render";
 import { RenderInput } from "./components/RenderInput";
+import { UseEffectRender } from "./components/UseEffectRender";
 
 const TestSamplePage: React.FC = () => {
   const outputConsole = (input: string) => {
@@ -22,9 +24,13 @@ const TestSamplePage: React.FC = () => {
       <FrameworkList frameworks={dummyData} />
       <hr />
 
-      {/* <UseEffectRender /> */}
+      <UseEffectRender />
+      <hr />
 
       <MockServer />
+      <hr />
+
+      <Counter />
     </>
   );
 };
