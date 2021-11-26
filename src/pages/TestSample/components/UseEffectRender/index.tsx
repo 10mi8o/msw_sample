@@ -17,9 +17,9 @@ export const UseEffectRender = () => {
     <div>
       <h2>UseEffectRenderTestSample</h2>
       {user ? (
-        <p>
+        <div>
           I'm {user.username}: {user.email}
-        </p>
+        </div>
       ) : null}
     </div>
   );
