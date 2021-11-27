@@ -21,7 +21,7 @@ describe("RenderingTest", () => {
     ).toBeTruthy();
     expect(screen.getByText("forStudy")).toBeTruthy();
 
-    expect(screen.getByDisplayValue("defaultValue")).toBeTruthy();
+    expect(screen.getByDisplayValue("これはテストです")).toBeTruthy();
 
     expect(screen.queryByText("hoge")).toBeNull(); // 要素がないことを検証
   });

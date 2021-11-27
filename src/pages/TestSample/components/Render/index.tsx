@@ -19,7 +19,7 @@ export const Render: React.FC = () => {
           id="count"
           type="text"
           placeholder="Enter"
-          value="defaultValue"
+          defaultValue="これはテストです"
         />
       </div>
 
