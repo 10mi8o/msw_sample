@@ -3,7 +3,7 @@ import { Counter } from "./components/Counter";
 import { FrameworkList } from "./components/FrameworkList";
 import { dummyData } from "./components/FrameworkList/dummyData";
 import { MockServer } from "./components/MockServer";
-import { RenderTest } from "./components/Render";
+import { Render } from "./components/Render";
 import { RenderInput } from "./components/RenderInput";
 import { UseEffectRender } from "./components/UseEffectRender";
 
@@ -15,7 +15,7 @@ const TestSamplePage: React.FC = () => {
   return (
     <>
       <h1>TestSamplePage</h1>
-      <RenderTest />
+      <Render />
       <hr />
 
       <RenderInput outputConsole={outputConsole} />
